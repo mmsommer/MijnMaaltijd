@@ -11,7 +11,7 @@ namespace MijnMaaltijd.Controllers
 {
     public class RecipesController : Controller
     {
-        private MijnMaaltijdEntities db = new MijnMaaltijdEntities();
+        private Entities db = new Entities();
 
         //
         // GET: /Recipes/

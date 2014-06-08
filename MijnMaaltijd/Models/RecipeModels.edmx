@@ -22,7 +22,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Publication" Type="nvarchar" MaxLength="15" />
           <Property Name="SeasonID" Type="int" Nullable="false" />
@@ -41,14 +41,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Recipe_SeasonID_Season_ID">
@@ -80,7 +80,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MijnMaaltijd.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="MijnMaaltijdEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Recipes" EntityType="MijnMaaltijd.Models.Recipe" />
           <EntitySet Name="Seasons" EntityType="MijnMaaltijd.Models.Season" />
           <EntitySet Name="Types" EntityType="MijnMaaltijd.Models.Type" />
@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Publication" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
           <Property Name="SeasonID" Type="Int32" Nullable="false" />
@@ -118,7 +118,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Recipes" Relationship="MijnMaaltijd.Models.FK_Recipe_SeasonID_Season_ID" FromRole="Season" ToRole="Recipe" />
         </EntityType>
@@ -126,7 +126,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Recipes" Relationship="MijnMaaltijd.Models.FK_Recipe_TypeID_Type_ID" FromRole="Type" ToRole="Recipe" />
         </EntityType>
@@ -159,7 +159,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MijnMaaltijdModelsStoreContainer" CdmEntityContainer="MijnMaaltijdEntities">
+        <EntityContainerMapping StorageEntityContainer="MijnMaaltijdModelsStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Recipes">
             <EntityTypeMapping TypeName="MijnMaaltijd.Models.Recipe">
               <MappingFragment StoreEntitySet="Recipe">

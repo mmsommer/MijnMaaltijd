@@ -13,10 +13,10 @@ namespace MijnMaaltijd.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MijnMaaltijdEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public MijnMaaltijdEntities()
-            : base("name=MijnMaaltijdEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
