@@ -1,0 +1,105 @@
+﻿@model IEnumerable<MijnMaaltijd.Models.Recipe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Season.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegetarian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsGlutenFree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVeganAdaptable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsGlutenFreeAdaptable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VeganAdaption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GlutenFreeAdaption)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Publication)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Season.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMeat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsFish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVegetarian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVegan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsGlutenFree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVeganAdaptable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsGlutenFreeAdaptable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VeganAdaption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GlutenFreeAdaption)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
