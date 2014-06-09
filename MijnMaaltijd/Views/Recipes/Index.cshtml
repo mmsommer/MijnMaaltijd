@@ -82,9 +82,9 @@
         @Html.DisplayFor(modelItem => item.IsGlutenFreeAdaptable)
       </td>
       <td>
-        @Html.ActionLink("Edit", ButtonLocales.Edit, new { id = item.ID }) |
-            @Html.ActionLink("Details", ButtonLocales.Details, new { id = item.ID }) |
-            @Html.ActionLink("Delete", ButtonLocales.Delete, new { id = item.ID })
+        @Html.ActionLink(ButtonLocales.Edit, "Edit", new { id = item.ID }) |
+            @Html.ActionLink(ButtonLocales.Details, "Details", new { id = item.ID }) |
+            @Html.ActionLink(ButtonLocales.Delete, "Delete", new { id = item.ID })
       </td>
     </tr>
   }

@@ -245,6 +245,25 @@ hgroup.title h2 {
     margin-left: 3px;
 }
 
+fieldset .display-label, fieldset .editor-label {
+    display: inline-block;
+    width: 30%;
+    font-weight: bold;
+    float: left;
+    clear: left;
+    height: 2.7em;
+}
+
+fieldset .display-field, fieldset .editor-field {
+    display: inline-block;
+    width: 70%;
+    float: left;
+}
+
+p {
+    clear: both;
+}
+
 /* features */
 section.feature {
     width: 300px;
