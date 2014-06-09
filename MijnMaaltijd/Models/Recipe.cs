@@ -26,8 +26,8 @@ namespace MijnMaaltijd.Models
         public bool IsGlutenFree { get; set; }
         public bool IsVeganAdaptable { get; set; }
         public bool IsGlutenFreeAdaptable { get; set; }
-        public string VeganAdaption { get; set; }
-        public Nullable<int> GlutenFreeAdaption { get; set; }
+        public string VeganAdaptation { get; set; }
+        public string GlutenFreeAdaptation { get; set; }
     
         public virtual Season Season { get; set; }
         public virtual Type Type { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MijnMaaltijd.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MijnMaaltijd.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="MijnMaaltijdModelsStoreContainer">
           <EntitySet Name="Recipe" EntityType="MijnMaaltijd.Models.Store.Recipe" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Season" EntityType="MijnMaaltijd.Models.Store.Season" store:Type="Tables" Schema="dbo" />
@@ -23,7 +23,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="Publication" Type="nvarchar" MaxLength="15" />
           <Property Name="SeasonID" Type="int" Nullable="false" />
           <Property Name="TypeID" Type="int" Nullable="false" />
@@ -34,8 +34,8 @@
           <Property Name="IsGlutenFree" Type="bit" Nullable="false" />
           <Property Name="IsVeganAdaptable" Type="bit" Nullable="false" />
           <Property Name="IsGlutenFreeAdaptable" Type="bit" Nullable="false" />
-          <Property Name="VeganAdaption" Type="text" />
-          <Property Name="GlutenFreeAdaption" Type="int" />
+          <Property Name="VeganAdaptation" Type="ntext" />
+          <Property Name="GlutenFreeAdaptation" Type="ntext" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -75,8 +75,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MijnMaaltijd.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -98,7 +97,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Publication" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
           <Property Name="SeasonID" Type="Int32" Nullable="false" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
@@ -109,10 +108,10 @@
           <Property Name="IsGlutenFree" Type="Boolean" Nullable="false" />
           <Property Name="IsVeganAdaptable" Type="Boolean" Nullable="false" />
           <Property Name="IsGlutenFreeAdaptable" Type="Boolean" Nullable="false" />
-          <Property Name="VeganAdaption" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="GlutenFreeAdaption" Type="Int32" />
           <NavigationProperty Name="Season" Relationship="MijnMaaltijd.Models.FK_Recipe_SeasonID_Season_ID" FromRole="Recipe" ToRole="Season" />
           <NavigationProperty Name="Type" Relationship="MijnMaaltijd.Models.FK_Recipe_TypeID_Type_ID" FromRole="Recipe" ToRole="Type" />
+          <Property Type="String" Name="VeganAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GlutenFreeAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -163,6 +162,8 @@
           <EntitySetMapping Name="Recipes">
             <EntityTypeMapping TypeName="MijnMaaltijd.Models.Recipe">
               <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="GlutenFreeAdaptation" ColumnName="GlutenFreeAdaptation" />
+                <ScalarProperty Name="VeganAdaptation" ColumnName="VeganAdaptation" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Publication" ColumnName="Publication" />
@@ -175,9 +176,7 @@
                 <ScalarProperty Name="IsGlutenFree" ColumnName="IsGlutenFree" />
                 <ScalarProperty Name="IsVeganAdaptable" ColumnName="IsVeganAdaptable" />
                 <ScalarProperty Name="IsGlutenFreeAdaptable" ColumnName="IsGlutenFreeAdaptable" />
-                <ScalarProperty Name="VeganAdaption" ColumnName="VeganAdaption" />
-                <ScalarProperty Name="GlutenFreeAdaption" ColumnName="GlutenFreeAdaption" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Seasons">
