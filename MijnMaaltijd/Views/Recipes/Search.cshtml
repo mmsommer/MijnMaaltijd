@@ -1,0 +1,106 @@
+﻿@model MijnMaaltijd.Models.SearchRecipe
+
+@{
+  ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Criteria</legend>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Name)
+      @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.SeasonID, "Season")
+    </div>
+    <div class="editor-field">
+      @Html.DropDownList("SeasonID", String.Empty)
+      @Html.ValidationMessageFor(model => model.SeasonID)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.TypeID, "Type")
+    </div>
+    <div class="editor-field">
+      @Html.DropDownList("TypeID", String.Empty)
+      @Html.ValidationMessageFor(model => model.TypeID)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsMeat)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsMeat)
+      @Html.ValidationMessageFor(model => model.IsMeat)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsFish)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsFish)
+      @Html.ValidationMessageFor(model => model.IsFish)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsVegetarian)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsVegetarian)
+      @Html.ValidationMessageFor(model => model.IsVegetarian)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsVegan)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsVegan)
+      @Html.ValidationMessageFor(model => model.IsVegan)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsGlutenFree)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsGlutenFree)
+      @Html.ValidationMessageFor(model => model.IsGlutenFree)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsVeganAdaptable)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsVeganAdaptable)
+      @Html.ValidationMessageFor(model => model.IsVeganAdaptable)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.IsGlutenFreeAdaptable)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.IsGlutenFreeAdaptable)
+      @Html.ValidationMessageFor(model => model.IsGlutenFreeAdaptable)
+    </div>
+
+    <p>
+      <input type="submit" value="Search" />
+    </p>
+  </fieldset>
+}
+
+@if (ViewBag.SearchResult != null)
+{
+  @Html.Partial("RecipeList", (IEnumerable<MijnMaaltijd.Models.Recipe>)ViewBag.SearchResult);
+}

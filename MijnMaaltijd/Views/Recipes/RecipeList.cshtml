@@ -1,15 +1,5 @@
 ﻿@model IEnumerable<MijnMaaltijd.Models.Recipe>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-  @Html.ActionLink("Create New", "Create")
-  @Html.ActionLink("Search", "Search")
-</p>
 <table>
     <tr>
         <th>
@@ -19,10 +9,10 @@
             @Html.DisplayNameFor(model => model.Publication)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Season.Name)
+            @Html.DisplayNameFor(model => model.SeasonID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Type.Name)
+            @Html.DisplayNameFor(model => model.TypeID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsMeat)
@@ -63,10 +53,10 @@
             @Html.DisplayFor(modelItem => item.Publication)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Season.Name)
+            @Html.DisplayFor(modelItem => item.SeasonID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Type.Name)
+            @Html.DisplayFor(modelItem => item.TypeID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsMeat)
@@ -96,9 +86,7 @@
             @Html.DisplayFor(modelItem => item.GlutenFreeAdaption)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
         </td>
     </tr>
 }

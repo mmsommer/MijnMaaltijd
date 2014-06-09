@@ -209,6 +209,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecipeModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SearchRecipe.cs" />
     <Compile Include="Models\Season.cs">
       <DependentUpon>RecipeModels.tt</DependentUpon>
     </Compile>
@@ -350,9 +351,12 @@
     <Content Include="Views\Recipes\Create.cshtml" />
     <Content Include="Views\Recipes\Edit.cshtml" />
     <Content Include="Views\Recipes\Delete.cshtml" />
+    <Content Include="Views\Recipes\Search.cshtml" />
+    <Content Include="Views\Recipes\RecipeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\Display\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -22,6 +22,59 @@ namespace MijnMaaltijd.Controllers
             return View(recipes.ToList());
         }
 
+        public ActionResult Search(SearchRecipe criteria)
+        {
+            criteria = criteria ?? new SearchRecipe();
+
+            var recipes = db.Recipes.Include(r => r.Season).Include(r => r.Type);
+            if (!string.IsNullOrWhiteSpace(criteria.Name))
+            {
+                recipes = recipes.Where(x => x.Name.ToLower().Contains(criteria.Name.ToLower()));
+            }
+            if (criteria.SeasonID != null)
+            {
+                recipes = recipes.Where(x => x.SeasonID == criteria.SeasonID);
+            }
+            if (criteria.TypeID != null)
+            {
+                recipes = recipes.Where(x => x.TypeID == criteria.TypeID);
+            }
+            if (criteria.IsFish == true)
+            {
+                recipes = recipes.Where(x => x.IsFish);
+            }
+            if (criteria.IsGlutenFree == true)
+            {
+                recipes = recipes.Where(x => x.IsGlutenFree);
+            }
+            if (criteria.IsGlutenFreeAdaptable == true)
+            {
+                recipes = recipes.Where(x => x.IsGlutenFreeAdaptable);
+            }
+            if (criteria.IsMeat == true)
+            {
+                recipes = recipes.Where(x => x.IsMeat);
+            }
+            if (criteria.IsVegan == true)
+            {
+                recipes = recipes.Where(x => x.IsVegan);
+            }
+            if (criteria.IsVeganAdaptable == true)
+            {
+                recipes = recipes.Where(x => x.IsVeganAdaptable);
+            }
+            if (criteria.IsVegetarian == true)
+            {
+                recipes = recipes.Where(x => x.IsVegetarian);
+            }
+
+            ViewBag.SearchResult = recipes.ToList();
+            ViewBag.SeasonID = new SelectList(db.Seasons, "ID", "Name");
+            ViewBag.TypeID = new SelectList(db.Types, "ID", "Name");
+
+            return View(criteria);
+        }
+
         //
         // GET: /Recipes/Details/5
 
