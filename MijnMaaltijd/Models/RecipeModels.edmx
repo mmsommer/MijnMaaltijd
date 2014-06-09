@@ -34,6 +34,7 @@
           <Property Name="IsGlutenFree" Type="bit" Nullable="false" />
           <Property Name="IsVeganAdaptable" Type="bit" Nullable="false" />
           <Property Name="IsGlutenFreeAdaptable" Type="bit" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="VeganAdaptation" Type="ntext" />
           <Property Name="GlutenFreeAdaptation" Type="ntext" />
         </EntityType>
@@ -110,6 +111,7 @@
           <Property Name="IsGlutenFreeAdaptable" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Season" Relationship="MijnMaaltijd.Models.FK_Recipe_SeasonID_Season_ID" FromRole="Recipe" ToRole="Season" />
           <NavigationProperty Name="Type" Relationship="MijnMaaltijd.Models.FK_Recipe_TypeID_Type_ID" FromRole="Recipe" ToRole="Type" />
+          <Property Type="Int32" Name="Number" Nullable="false" />
           <Property Type="String" Name="VeganAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="GlutenFreeAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -164,6 +166,7 @@
               <MappingFragment StoreEntitySet="Recipe">
                 <ScalarProperty Name="GlutenFreeAdaptation" ColumnName="GlutenFreeAdaptation" />
                 <ScalarProperty Name="VeganAdaptation" ColumnName="VeganAdaptation" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Publication" ColumnName="Publication" />
