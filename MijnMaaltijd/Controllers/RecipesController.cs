@@ -9,6 +9,7 @@ using MijnMaaltijd.Models;
 
 namespace MijnMaaltijd.Controllers
 {
+    [Authorize]
     public class RecipesController : Controller
     {
         private Entities db = new Entities();
