@@ -1,10 +1,12 @@
-﻿@model MijnMaaltijd.Models.SearchRecipe
+﻿@using MijnMaaltijd.Models;
+@using MijnMaaltijd.Locales;
+@model SearchRecipe
 
 @{
-  ViewBag.Title = "Search";
+  ViewBag.Title = SearchLocales.Title;
 }
 
-<h2>Search</h2>
+<h2>@SearchLocales.Title</h2>
 
 @using (Html.BeginForm())
 {
@@ -15,7 +17,7 @@
     <legend>Criteria</legend>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.Name)
+      @Html.LabelFor(model => model.Name, SearchRecipeLocales.NameContains)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.Name)
@@ -23,7 +25,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.SeasonID, "Season")
+      @Html.LabelFor(model => model.SeasonID, SearchRecipeLocales.Season)
     </div>
     <div class="editor-field">
       @Html.DropDownList("SeasonID", String.Empty)
@@ -31,7 +33,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.TypeID, "Type")
+      @Html.LabelFor(model => model.TypeID, SearchRecipeLocales.Type)
     </div>
     <div class="editor-field">
       @Html.DropDownList("TypeID", String.Empty)
@@ -39,7 +41,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsMeat)
+      @Html.LabelFor(model => model.IsMeat, SearchRecipeLocales.IsMeat)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsMeat)
@@ -47,7 +49,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsFish)
+      @Html.LabelFor(model => model.IsFish, SearchRecipeLocales.IsFish)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsFish)
@@ -55,7 +57,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsVegetarian)
+      @Html.LabelFor(model => model.IsVegetarian, SearchRecipeLocales.IsVegetarian)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsVegetarian)
@@ -63,7 +65,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsVegan)
+      @Html.LabelFor(model => model.IsVegan, SearchRecipeLocales.IsVegan)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsVegan)
@@ -71,7 +73,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsGlutenFree)
+      @Html.LabelFor(model => model.IsGlutenFree, SearchRecipeLocales.IsGlutenFree)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsGlutenFree)
@@ -79,7 +81,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsVeganAdaptable)
+      @Html.LabelFor(model => model.IsVeganAdaptable, SearchRecipeLocales.IsVeganAdaptable)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsVeganAdaptable)
@@ -87,7 +89,7 @@
     </div>
 
     <div class="editor-label">
-      @Html.LabelFor(model => model.IsGlutenFreeAdaptable)
+      @Html.LabelFor(model => model.IsGlutenFreeAdaptable, SearchRecipeLocales.IsGlutenFreeAdaptable)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.IsGlutenFreeAdaptable)
@@ -95,12 +97,12 @@
     </div>
 
     <p>
-      <input type="submit" value="Search" />
+      <input type="submit" value="@(ButtonLocales.Search)" />
     </p>
   </fieldset>
 }
 
 @if (ViewBag.SearchResult != null)
 {
-  @Html.Partial("RecipeList", (IEnumerable<MijnMaaltijd.Models.Recipe>)ViewBag.SearchResult);
+  @Html.Partial("RecipeList", (IEnumerable<Recipe>)ViewBag.SearchResult);
 }
