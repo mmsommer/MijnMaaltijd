@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GlutenFreeAdaption" xml:space="preserve">
-    <value>Glutenvrij aanpassing</value>
+    <value>GV aanpassing</value>
   </data>
   <data name="IsFish" xml:space="preserve">
     <value>Vis</value>
   </data>
   <data name="IsGlutenFree" xml:space="preserve">
-    <value>Glutenvrij</value>
+    <value>GV</value>
   </data>
   <data name="IsGlutenFreeAdaptable" xml:space="preserve">
-    <value>Glutenvrij aanpasbaar</value>
+    <value>GV aanpasbaar</value>
   </data>
   <data name="IsMeat" xml:space="preserve">
     <value>Vlees</value>

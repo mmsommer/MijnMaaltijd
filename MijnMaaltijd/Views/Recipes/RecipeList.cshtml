@@ -8,9 +8,6 @@
       @(RecipeListLocales.Name)
     </th>
     <th>
-      @(RecipeListLocales.Publication)
-    </th>
-    <th>
       @(RecipeListLocales.SeasonID)
     </th>
     <th>
@@ -47,13 +44,10 @@
         @Html.DisplayFor(modelItem => item.Name)
       </td>
       <td>
-        @Html.DisplayFor(modelItem => item.Publication)
+        @Html.DisplayFor(modelItem => item.Season.Name)
       </td>
       <td>
-        @Html.DisplayFor(modelItem => item.SeasonID)
-      </td>
-      <td>
-        @Html.DisplayFor(modelItem => item.TypeID)
+        @Html.DisplayFor(modelItem => item.Type.Name)
       </td>
       <td>
         @Html.DisplayFor(modelItem => item.IsMeat)

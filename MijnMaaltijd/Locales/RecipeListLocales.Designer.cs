@@ -61,7 +61,7 @@ namespace MijnMaaltijd.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Glutenvrij aanpassing.
+        ///   Looks up a localized string similar to GV aanpassing.
         /// </summary>
         public static string GlutenFreeAdaption {
             get {
@@ -79,7 +79,7 @@ namespace MijnMaaltijd.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Glutenvrij.
+        ///   Looks up a localized string similar to GV.
         /// </summary>
         public static string IsGlutenFree {
             get {
@@ -88,7 +88,7 @@ namespace MijnMaaltijd.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Glutenvrij aanpasbaar.
+        ///   Looks up a localized string similar to GV aanpasbaar.
         /// </summary>
         public static string IsGlutenFreeAdaptable {
             get {
