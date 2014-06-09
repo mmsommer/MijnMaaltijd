@@ -88,6 +88,15 @@ namespace MijnMaaltijd.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dropbox.
+        /// </summary>
+        public static string Dropbox {
+            get {
+                return ResourceManager.GetString("Dropbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aanpassen.
         /// </summary>
         public static string Edit {

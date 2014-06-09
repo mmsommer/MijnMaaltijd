@@ -37,6 +37,7 @@
           <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="VeganAdaptation" Type="ntext" />
           <Property Name="GlutenFreeAdaptation" Type="ntext" />
+          <Property Name="Dropbox" Type="nvarchar" MaxLength="1064" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -114,6 +115,7 @@
           <Property Type="Int32" Name="Number" Nullable="false" />
           <Property Type="String" Name="VeganAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="GlutenFreeAdaptation" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dropbox" MaxLength="1064" FixedLength="false" Unicode="true" Nullable="true" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -164,6 +166,7 @@
           <EntitySetMapping Name="Recipes">
             <EntityTypeMapping TypeName="MijnMaaltijd.Models.Recipe">
               <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="Dropbox" ColumnName="Dropbox" />
                 <ScalarProperty Name="GlutenFreeAdaptation" ColumnName="GlutenFreeAdaptation" />
                 <ScalarProperty Name="VeganAdaptation" ColumnName="VeganAdaptation" />
                 <ScalarProperty Name="Number" ColumnName="Number" />

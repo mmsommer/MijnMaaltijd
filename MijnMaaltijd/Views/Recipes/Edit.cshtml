@@ -119,6 +119,14 @@
             @Html.ValidationMessageFor(model => model.GlutenFreeAdaptation)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Dropbox)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Dropbox)
+            @Html.ValidationMessageFor(model => model.Dropbox)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

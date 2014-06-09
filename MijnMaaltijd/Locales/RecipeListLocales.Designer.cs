@@ -61,6 +61,15 @@ namespace MijnMaaltijd.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Link.
+        /// </summary>
+        public static string Dropbox {
+            get {
+                return ResourceManager.GetString("Dropbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GV aanpassing.
         /// </summary>
         public static string GlutenFreeAdaption {

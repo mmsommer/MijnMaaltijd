@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Dropbox" xml:space="preserve">
+    <value>Link</value>
+  </data>
   <data name="GlutenFreeAdaption" xml:space="preserve">
     <value>GV aanpassing</value>
   </data>

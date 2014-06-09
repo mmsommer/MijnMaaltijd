@@ -1,106 +1,113 @@
 ﻿@model MijnMaaltijd.Models.Recipe
 
 @{
-    ViewBag.Title = "Details";
+  ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Recipe</legend>
+  <legend>Recipe</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.Name)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.Name)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Publication)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Publication)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.Publication)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.Publication)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Season)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Season.Name)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.Season)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.Season.Name)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Type)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Type.Name)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.Type)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.Type.Name)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsMeat)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsMeat)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsMeat)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsMeat)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsFish)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsFish)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsFish)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsFish)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsVegetarian)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsVegetarian)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsVegetarian)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsVegetarian)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsVegan)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsVegan)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsVegan)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsVegan)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsGlutenFree)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsGlutenFree)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsGlutenFree)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsGlutenFree)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsVeganAdaptable)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsVeganAdaptable)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsVeganAdaptable)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsVeganAdaptable)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsGlutenFreeAdaptable)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsGlutenFreeAdaptable)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.IsGlutenFreeAdaptable)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.IsGlutenFreeAdaptable)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.VeganAdaptation)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.VeganAdaptation)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.VeganAdaptation)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.VeganAdaptation)
+  </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.GlutenFreeAdaptation)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.GlutenFreeAdaptation)
-    </div>
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.GlutenFreeAdaptation)
+  </div>
+  <div class="display-field">
+    @Html.DisplayFor(model => model.GlutenFreeAdaptation)
+  </div>
+
+  <div class="display-label">
+    @Html.DisplayNameFor(model => model.Dropbox)
+  </div>
+  <div class="display-field">
+    <a href="@Model.Dropbox">@Html.DisplayFor(model => model.Dropbox)</a>
+  </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+  @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

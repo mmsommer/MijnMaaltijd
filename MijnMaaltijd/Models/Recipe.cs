@@ -29,6 +29,7 @@ namespace MijnMaaltijd.Models
         public int Number { get; set; }
         public string VeganAdaptation { get; set; }
         public string GlutenFreeAdaptation { get; set; }
+        public string Dropbox { get; set; }
     
         public virtual Season Season { get; set; }
         public virtual Type Type { get; set; }

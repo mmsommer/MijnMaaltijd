@@ -46,6 +46,9 @@
       @(RecipeListLocales.IsGlutenFreeAdaptable)
     </th>
     <th></th>
+    <th>
+      @(RecipeListLocales.Dropbox)
+    </th>
   </tr>
 
   @foreach (var item in Model)
@@ -85,6 +88,12 @@
         @Html.ActionLink(ButtonLocales.Edit, "Edit", new { id = item.ID }) |
             @Html.ActionLink(ButtonLocales.Details, "Details", new { id = item.ID }) |
             @Html.ActionLink(ButtonLocales.Delete, "Delete", new { id = item.ID })
+      </td>
+      <td>
+        @if (item.Dropbox != null)
+        {
+          <a href="@item.Dropbox">@ButtonLocales.Dropbox</a>
+        }
       </td>
     </tr>
   }
