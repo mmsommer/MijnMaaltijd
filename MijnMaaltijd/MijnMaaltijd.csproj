@@ -39,10 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -62,9 +68,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -186,6 +189,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="DAL\MijnMaaltijdContext.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,31 +220,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Recipe.cs">
-      <DependentUpon>RecipeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecipeModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecipeModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecipeModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecipeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecipeModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecipeModels.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\RecipeModels.cs" />
     <Compile Include="Models\SearchRecipe.cs" />
-    <Compile Include="Models\Season.cs">
-      <DependentUpon>RecipeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Type.cs">
-      <DependentUpon>RecipeModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,23 +281,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\RecipeModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RecipeModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\RecipeModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RecipeModels.edmx</DependentUpon>
-      <LastGenOutput>RecipeModels.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\RecipeModels.edmx.diagram">
-      <DependentUpon>RecipeModels.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\RecipeModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RecipeModels.edmx</DependentUpon>
-      <LastGenOutput>RecipeModels.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -332,7 +296,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

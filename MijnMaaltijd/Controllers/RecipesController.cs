@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using MijnMaaltijd.DAL;
+using MijnMaaltijd.Models;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MijnMaaltijd.Models;
 
 namespace MijnMaaltijd.Controllers
 {
     [Authorize]
     public class RecipesController : Controller
     {
-        private Entities db = new Entities();
+        private MijnMaaltijdContext db = new MijnMaaltijdContext();
 
         //
         // GET: /Recipes/
